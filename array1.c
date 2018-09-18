@@ -2,7 +2,7 @@
 
 int main ()
 {
-	int i = 0, n, temp;
+	int i = 0, n = 0, temp;
 	
 	printf ("Please enter the total amount of elemtents: ");
 	scanf ("%d", &i);
@@ -18,14 +18,30 @@ int main ()
 
 		scanf ("%d", &intergers [i]);
 
-	while ( pos1 != pos2 ) {
+	if ( n % 2 == 0) {
 
-		temp = intergers [pos1];
-		intergers [pos2] = intergers [pos1];
-		intergers [pos1] = temp;
-		pos1++;
-		pos2--;
-	}
+		while ( pos2 > pos1) {
+
+			temp = intergers [pos2];
+			intergers [pos2] = intergers [pos1];
+		    intergers [pos1] = temp;
+			pos1++;
+			pos2--;
+			}
+		}
+		
+	else {
+
+		while ( pos1 != pos2 ) {
+
+			temp = intergers [pos2];
+			intergers [pos2] = intergers [pos1];
+			intergers [pos1] = temp;
+			pos1++;
+			pos2--;
+			}	
+		}
+	
 
 	printf ("The numbers in reverse order: ");
 
